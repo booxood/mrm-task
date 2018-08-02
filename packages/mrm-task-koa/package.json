@@ -1,6 +1,6 @@
 {
   "name": "@azm/mrm-task-koa",
-  "version": "1.0.0",
+  "version": "1.0.1-beta.0",
   "description": "mrm task koa",
   "main": "index.js",
   "files": [
