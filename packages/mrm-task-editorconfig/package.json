@@ -1,0 +1,22 @@
+{
+  "name": "@azm/mrm-task-editorconfig",
+  "version": "1.0.0",
+  "description": "mrm task editorconfig",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "mrm",
+    "mrm-task",
+    "editorconfig"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Liucw",
+  "license": "MIT",
+  "dependencies": {
+    "mrm-core": "^3.1.1"
+  }
+}
