@@ -1,0 +1,9 @@
+/**
+ * Default configuration
+ */
+const env = process.env.NODE_ENV || 'development'
+const port = process.env.PORT || ${port}
+module.exports = {
+  port,
+  env,
+}

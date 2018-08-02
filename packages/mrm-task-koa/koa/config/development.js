@@ -1,0 +1,6 @@
+/**
+ * Development configuration
+ */
+
+module.exports = {
+}

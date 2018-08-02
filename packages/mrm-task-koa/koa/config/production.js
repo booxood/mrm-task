@@ -1,0 +1,6 @@
+/**
+ * Production configuration
+ */
+
+module.exports = {
+}
