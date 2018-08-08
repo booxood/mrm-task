@@ -4,18 +4,30 @@ function task(config) {
 	let exts = '';
 	const ignores = ['node_modules/'];
 	const gitIgnores = ['.eslintcache'];
-	const packages = ['eslint'];
+	const packages = [
+		'eslint',
+		'eslint-config-standard',
+		'eslint-plugin-standard',
+		'eslint-plugin-promise',
+		'eslint-plugin-import',
+		'eslint-plugin-node'
+	];
 	const oldPackages = ['jslint', 'jshint'];
-	const { eslintPreset, eslintPeerDependencies, eslintObsoleteDependencies, eslintRules } = config
+	const { eslintPreset, eslintPeerDependencies, eslintObsoleteDependencies, eslintRules, eslintEnv } = config
 		.defaults({
-			eslintPreset: 'eslint:recommended',
+			eslintPreset: 'standard',
 			eslintPeerDependencies: [],
 			eslintObsoleteDependencies: [],
+			eslintRules: {},
+			eslintEnv: {
+				es6: true,
+				node: true,
+			}
 		})
 		.values();
 
 	// Preset
-	if (eslintPreset !== 'eslint:recommended') {
+	if (eslintPreset !== 'standard') {
 		packages.push(`eslint-config-${eslintPreset}`);
 	}
 
@@ -26,6 +38,9 @@ function task(config) {
 	const eslintrc = json('.eslintrc');
 	if (!eslintrc.get('extends', '').startsWith(eslintPreset)) {
 		eslintrc.set('extends', eslintPreset);
+	}
+	if (eslintEnv) {
+		eslintrc.merge({ env: eslintEnv });
 	}
 	if (eslintRules) {
 		eslintrc.merge({ rules: eslintRules });
