@@ -6,6 +6,16 @@ node_modules/
 .eslintcache
 coverage/
 yarn.lock
-package-lock.json
 
 *.log
+lib-cov
+*.seed
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+npm-debug.log
+yarn-error.log
+.nyc_output/
+tmp/
