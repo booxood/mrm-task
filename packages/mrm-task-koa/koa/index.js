@@ -20,11 +20,13 @@ app.use(routers.allowedMethods())
 
 if (!module.parent) {
   app.listen(config.port, () => {
+    /* eslint-disable no-console */
     console.info('----------------------------')
     console.info('Server running on:')
     console.info('\t PORT: \t', config.port)
     console.info('\t ENV: \t', config.env)
     console.info('----------------------------')
+    /* eslint-enable */
   })
 }
 
