@@ -8,7 +8,11 @@ function resolve (dir) {
 function task (config) {
   const { port } = config.defaults({ port: 3000 }).values()
 
-  const packages = ['config', 'koa', 'koa-bodyparser', 'koa-router', 'koa-static']
+  const packages = [
+    'config',
+    'koa', 'koa-bodyparser', 'koa-router', 'koa-static',
+    'pino', 'pino-pretty',
+  ]
   const devPackages = ['nodemon']
   const pkg = packageJson()
 
@@ -25,6 +29,9 @@ function task (config) {
     'config/production.js',
     'config/test.js',
     'routers/index.js',
+    'common/logger.js',
+    'middlewares/access-logger.js',
+    'middlewares/error-handle.js',
   ], { overwrite: false })
 
   template('config/default.js', resolve('koa/config/default.js_')).apply({

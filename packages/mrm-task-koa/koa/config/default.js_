@@ -6,4 +6,8 @@ const port = process.env.PORT || ${port}
 module.exports = {
   port,
   env,
+
+  logger: {
+    level: 'info',
+  },
 }
