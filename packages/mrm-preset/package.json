@@ -13,6 +13,7 @@
     "@azm/mrm-task-eslint": "^1.0.1-beta.0",
     "@azm/mrm-task-gitignore": "^1.0.1-beta.0",
     "@azm/mrm-task-koa": "^1.0.1-beta.0",
+    "@azm/mrm-task-rollup": "^1.0.1-beta.0",
     "mrm-task-lint-staged": "^1.3.0"
   }
 }
