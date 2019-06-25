@@ -1,5 +1,5 @@
 const path = require('path')
-const { json, packageJson, lines, install, template, makeDirs, copyFiles } = require('mrm-core')
+const { json, yaml, packageJson, lines, install, template, makeDirs, copyFiles } = require('mrm-core')
 
 function resolve (dir) {
   return path.resolve(__dirname, dir)
@@ -32,7 +32,15 @@ function task (config) {
   babelrc.set('presets', ['@babel/preset-env'])
     .save()
 
-  // .eslintignore
+  // .eslint
+  let eslintrcYml = yaml('.eslintrc.yml')
+  let eslintrc = json('.eslintrc')
+  let eslintrcJson = json('.eslintrc.json')
+  if (eslintrc.exists()) eslintrcYml.merge(eslintrc.get())
+  if (eslintrcJson.exists()) eslintrcYml.merge(eslintrcJson.get())
+  eslintrcYml.set('parserOptions', { 'sourceType': 'module' })
+    .save()
+
   lines('.eslintignore')
     .add(ignores)
     .save()
