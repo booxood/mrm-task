@@ -1,12 +1,12 @@
 const path = require('path')
-const { json, packageJson, lines, install, template } = require('mrm-core')
+const { json, packageJson, lines, install, template, makeDirs, copyFiles } = require('mrm-core')
 
 function resolve (dir) {
   return path.resolve(__dirname, dir)
 }
 
 function task (config) {
-  const ignores = ['dist/']
+  const ignores = ['dist/', 'node_modules']
   const packages = [
     '@babel/core',
     '@babel/preset-env',
@@ -16,11 +16,17 @@ function task (config) {
   const pkg = packageJson()
   const babelrc = json('.babelrc')
 
-  const { name } = config
+  let { name } = config
     .defaults({
       name: pkg.get('name'),
     })
     .values()
+
+  if (!name) {
+    name = 'demo'
+  } else if (name.indexOf('@') === 0) { // @xxx/yyy
+    name = name.split('/')[1]
+  }
 
   // .babelrc
   babelrc.set('presets', ['@babel/preset-env'])
@@ -40,6 +46,12 @@ function task (config) {
   template('rollup.config.js', resolve('rollup.config.js_')).apply({
     name,
   }).save()
+
+  // src
+  makeDirs(['src'])
+  copyFiles(resolve('files'), [
+    'src/index.js',
+  ], { overwrite: false })
 
   pkg
     .set('main', `dist/${name}.cjs.js`)
