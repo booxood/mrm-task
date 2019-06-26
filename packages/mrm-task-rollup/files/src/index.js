@@ -1,2 +1,3 @@
-export default function say () {
+export default function add (x, y) {
+  return x + y
 }

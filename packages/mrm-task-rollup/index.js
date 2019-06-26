@@ -12,6 +12,8 @@ function task (config) {
     '@babel/preset-env',
     'rollup',
     'rollup-plugin-babel',
+    'jest',
+    'babel-jest',
   ]
   const pkg = packageJson()
   const babelrc = json('.babelrc')
@@ -29,7 +31,13 @@ function task (config) {
   }
 
   // .babelrc
-  babelrc.set('presets', ['@babel/preset-env'])
+  babelrc.set({ 'presets':
+    [['@babel/preset-env', {
+      'targets': {
+        'browsers': ['last 2 Chrome versions'],
+      },
+    }]],
+  })
     .save()
 
   // .eslint
@@ -55,10 +63,11 @@ function task (config) {
     name,
   }).save()
 
-  // src
-  makeDirs(['src'])
+  // files
+  makeDirs(['src', 'tests'])
   copyFiles(resolve('files'), [
     'src/index.js',
+    'tests/index.test.js',
   ], { overwrite: false })
 
   pkg
@@ -67,6 +76,8 @@ function task (config) {
     .set('browser', `dist/${name}.umd.js`)
     .set('files', ['dist'])
     .setScript('build', 'rollup -c')
+    .setScript('test', 'jest')
+    .setScript('test:cover', 'jest --coverage')
     .save()
 
   // Dependencies
