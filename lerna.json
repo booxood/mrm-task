@@ -1,10 +1,16 @@
 {
-  "lerna": "2.11.0",
+  "lerna": "3.22.1",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
   "packages": [
     "packages/*"
   ],
   "version": "independent",
   "command": {
+    "publish": {
+      "ignoreChanges": ["*.md"],
+      "message": "chore(release): publish"
+    },
     "init": {
       "exact": true
     }
