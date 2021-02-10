@@ -1,6 +1,6 @@
 {
   "name": "@azm/mrm-task-vscode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "mrm task vscode",
   "main": "index.js",
   "files": [

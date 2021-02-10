@@ -1,6 +1,6 @@
 {
   "name": "@azm/mrm-task-editorconfig",
-  "version": "1.0.1-beta.0",
+  "version": "1.0.1",
   "description": "mrm task editorconfig",
   "main": "index.js",
   "files": [

@@ -1,6 +1,6 @@
 {
   "name": "@azm/mrm-task-gitignore",
-  "version": "1.0.1-beta.0",
+  "version": "1.0.1",
   "description": "mrm task gitignore",
   "main": "index.js",
   "files": [

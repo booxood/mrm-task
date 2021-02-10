@@ -1,6 +1,6 @@
 {
   "name": "@azm/mrm-preset",
-  "version": "1.0.1-beta.0",
+  "version": "1.0.1",
   "description": "mrm preset",
   "main": "config.json",
   "scripts": {
@@ -9,11 +9,11 @@
   "author": "Liucw",
   "license": "MIT",
   "dependencies": {
-    "@azm/mrm-task-editorconfig": "^1.0.1-beta.0",
-    "@azm/mrm-task-eslint": "^1.0.1-beta.0",
-    "@azm/mrm-task-gitignore": "^1.0.1-beta.0",
-    "@azm/mrm-task-koa": "^1.0.1-beta.0",
-    "@azm/mrm-task-rollup": "^1.0.1-beta.0",
+    "@azm/mrm-task-editorconfig": "^1.0.1",
+    "@azm/mrm-task-eslint": "^1.0.1",
+    "@azm/mrm-task-gitignore": "^1.0.1",
+    "@azm/mrm-task-koa": "^1.0.1",
+    "@azm/mrm-task-rollup": "^1.0.1",
     "mrm-task-lint-staged": "^1.3.0"
   }
 }
