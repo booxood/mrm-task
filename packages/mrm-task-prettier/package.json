@@ -1,7 +1,7 @@
 {
-  "name": "@azm/mrm-task-vscode",
+  "name": "@azm/mrm-task-prettier",
   "version": "1.0.1",
-  "description": "mrm task vscode",
+  "description": "mrm task prettier",
   "main": "index.js",
   "files": [
     "index.js"
@@ -9,7 +9,7 @@
   "keywords": [
     "mrm",
     "mrm-task",
-    "vscode"
+    "prettier"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
