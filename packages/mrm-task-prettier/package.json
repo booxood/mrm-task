@@ -1,6 +1,6 @@
 {
   "name": "@azm/mrm-task-prettier",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "mrm task prettier",
   "main": "index.js",
   "files": [
