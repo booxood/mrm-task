@@ -34,8 +34,10 @@ function task (config) {
   settings.set(['emmet.includeLanguages'], {
     'javascript': 'javascriptreact',
   })
+  settings.save()
 
-  const prettierrc = json('.prettierrc', defaultPrettierOptions)
+  const prettierrc = json('.prettierrc')
+  prettierrc.set(defaultPrettierOptions)
   prettierrc.save()
 
   const pkg = packageJson()
